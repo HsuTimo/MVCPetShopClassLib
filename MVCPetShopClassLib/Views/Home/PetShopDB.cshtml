@@ -7,7 +7,7 @@
 <h1>PetShopDB</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="CreatePetShopDB">Create New</a>
 </p>
 <table class="table">
     <thead>
@@ -43,11 +43,12 @@
                 @Html.DisplayFor(modelItem => item.Price)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                @Html.ActionLink("Edit", "EditPetShopDB", new { ID=item.ID }) |
+                @Html.ActionLink("Details", "DetailsPetShopDB", new { ID = item.ID }) |
+                @Html.ActionLink("Delete", "DeletePetShopDB", new { ID = item.ID })
             </td>
         </tr>
 }
+
     </tbody>
 </table>

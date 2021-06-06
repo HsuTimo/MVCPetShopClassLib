@@ -1,0 +1,42 @@
+﻿@model PetShopLib.Models.PetShopProduct
+
+@{
+    ViewData["Title"] = "DetailsPetShopDB";
+}
+
+<h1>DetailsPetShopDB</h1>
+
+<div>
+    <h4>PetShopProduct</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ID)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ID)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ProductName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ProductName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Quantity)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Quantity)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "EditPetShopDB", new { ID = Model.ID }) |
+    <a asp-action="PetShopDB">Back to List</a>
+</div>

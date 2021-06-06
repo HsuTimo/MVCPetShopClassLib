@@ -36,7 +36,48 @@ namespace MVCPetShopClassLib.Controllers
             var list = _repo.GetAll();
             return View(list);
         }
+        [HttpGet]
+        public IActionResult EditPetShopDB(int id)
+        {
+            var item = _repo.GetById(id);
+            return View(item);
+        }
+        [HttpPost]
+        public IActionResult EditPetShopDB(PetShopProduct product)
+        {
+            var item = _repo.GetById(product.ID);
+            _repo.Update(product);
+            return View("EditPetShopDB",item);
+        }
+        [HttpGet]
+        public IActionResult CreatePetShopDB()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult CreatePetShopDB(PetShopProduct product)
+        {
+            _repo.Add(product);
+            return View("PetShopDB",_repo.GetAll());
+        }
+        public IActionResult DetailsPetShopDB(int id)
+        {
+            var item = _repo.GetById(id);
+            return View(item);
 
+        }
+        [HttpGet]
+        public IActionResult DeletePetShopDB(int id)
+        {
+            var item = _repo.GetById(id);
+            return View(item);
+        }
+        [HttpPost]
+        public IActionResult DeletePetShopDB(PetShopProduct product)
+        {
+            _repo.DeleteById(product.ID);
+            return View("PetShopDB", _repo.GetAll());
+        }
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
